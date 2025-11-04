@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font: Roboto Slab for consistent branding -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page title + global stylesheet -->
+    <title>FocusFlow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- === NAVIGATION BAR === -->
+    <nav class="navbar">
+      <!-- Logo / Home link -->
+      <a href="index.html" class="logo">
+        <h1 class="main">FocusFlow</h1>
+      </a>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="taskManager.html" class="active">Task Manager</a></li>
+        <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+        <li><a href="motivation.html">Motivation</a></li>
+      </ul>
+    </nav>
+
+    <!-- === TASK MANAGER SECTION === -->
+    <section class="task-container">
+      <div class="task-manager">
+        <!-- Section Title + Subtitle -->
+        <h2>Task Manager</h2>
+        <p class="task-subtitle">Organize, plan, and conquer your goals.</p>
+
+        <!-- === Add Task Form === -->
+        <div class="task-form">
+          <!-- Inputs for new task details -->
+          <input type="text" id="taskName" placeholder="Task name..." />
+          <input
+            type="text"
+            id="taskCategory"
+            placeholder="Category (e.g. Study)"
+          />
+          <input
+            type="number"
+            id="taskTime"
+            placeholder="Focus time (mins)"
+            min="5"
+          />
+          <!-- Add task button -->
+          <button id="addTask" class="btn primary">Add Task</button>
+        </div>
+
+        <!-- === Sorting Dropdown === -->
+        <div class="sort-options">
+          <label for="sortBy">Sort by:</label>
+          <select id="sortBy">
+            <option value="default">Default</option>
+            <option value="category">Category</option>
+            <option value="time">Focus Time</option>
+            <option value="completed">Completion</option>
+          </select>
+        </div>
+
+        <!-- === Dynamic Task List (JS populates here) === -->
+        <div class="task-list" id="taskList"></div>
+      </div>
+    </section>
+
+    <!-- JavaScript handles functionality for task creation, storage, and sorting -->
+    <script src="script.js"></script>
+  </body>
+</html>

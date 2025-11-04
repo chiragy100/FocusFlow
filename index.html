@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic meta configuration for proper rendering and character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Ensures the page scales correctly on all devices (responsive design) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importing Roboto Slab font from Google Fonts for consistent typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page title that appears in browser tab -->
+    <title>FocusFlow</title>
+
+    <!-- External CSS file for styling all page elements -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ======================= -->
+    <!-- Navigation Bar Section -->
+    <!-- ======================= -->
+    <nav class="navbar">
+      <!-- Logo redirects user back to the home (index) page -->
+      <a href="index.html" class="logo">
+        <h1 class="main">FocusFlow</h1>
+      </a>
+
+      <!-- Navigation links to other pages within the app -->
+      <ul class="nav-links">
+        <li><a href="taskManager.html">Task Manager</a></li>
+        <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+        <li><a href="motivation.html">Motivation</a></li>
+      </ul>
+    </nav>
+
+    <!-- ======================= -->
+    <!-- Hero / Introduction Section -->
+    <!-- ======================= -->
+    <section class="hero">
+      <div class="hero-content">
+        <!-- Main welcoming headline -->
+        <h1 class="hero-title">Welcome to FocusFlow</h1>
+
+        <!-- Catchy short tagline -->
+        <p class="hero-subtitle">Lock in now.</p>
+
+        <!-- Short description explaining the purpose of FocusFlow -->
+        <p class="hero-desc">
+          FocusFlow is your all-in-one productivity hub — combining focus tools,
+          motivation, and deep work strategies to help you achieve more with
+          less stress.
+        </p>
+
+        <!-- Button that directs users to the Task Manager page to get started -->
+        <div class="hero-buttons">
+          <a href="taskManager.html" class="btn primary">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= -->
+    <!-- Features / Information Section -->
+    <!-- ======================= -->
+    <section class="features">
+      <!-- Individual "note" sections highlight each major feature of FocusFlow -->
+
+      <!-- Task Manager feature description -->
+      <div class="note">
+        <h2>Task Manager</h2>
+        <p>
+          Stay organized with your goals and to-do lists. FocusFlow's task
+          manager keeps track of your daily priorities so you never lose focus.
+        </p>
+      </div>
+
+      <!-- Pomodoro Timer feature description -->
+      <div class="note">
+        <h2>Pomodoro Timer</h2>
+        <p>
+          Boost productivity using focused work sessions. Work in powerful
+          25-minute intervals and take short breaks to recharge your mind.
+        </p>
+      </div>
+
+      <!-- Motivation Hub feature description -->
+      <div class="note">
+        <h2>Motivation Hub</h2>
+        <p>
+          Stay inspired with motivational quotes, progress reflections, and
+          reminders designed to keep your drive alive during long study or work
+          sessions.
+        </p>
+      </div>
+    </section>
+
+    <!-- External JavaScript file for interactivity and dynamic functionality -->
+    <script src="script.js"></script>
+  </body>
+</html>

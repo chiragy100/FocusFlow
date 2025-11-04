@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Defines character encoding for proper text rendering -->
+    <meta charset="UTF-8" />
+
+    <!-- Makes the layout responsive across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importing the Roboto Slab font for cohesive styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title shown in browser tab -->
+    <title>FocusFlow</title>
+
+    <!-- Linking external stylesheet for layout and design -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ======================= -->
+    <!-- Navigation Bar -->
+    <!-- ======================= -->
+    <nav class="navbar">
+        <!-- Logo linking to homepage -->
+        <a href="index.html" class="logo">
+            <h1 class="main">FocusFlow</h1>
+        </a>
+
+        <!-- Navigation links to other FocusFlow pages -->
+        <ul class="nav-links">
+            <li><a href="taskManager.html">Task Manager</a></li>
+            <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+            <li><a href="motivation.html">Motivation</a></li>
+        </ul>
+    </nav>
+
+    <!-- ======================= -->
+    <!-- SECOND NAVBAR (main one used for this page) -->
+    <!-- ======================= -->
+    <body>
+      <nav class="navbar">
+        <!-- Logo for site branding, returns to homepage -->
+        <a href="index.html" class="logo">
+          <h1 class="main">FocusFlow</h1>
+        </a>
+
+        <!-- Active link visually indicates the user is on the Pomodoro Timer page -->
+        <ul class="nav-links">
+          <li><a href="taskManager.html">Task Manager</a></li>
+          <li><a href="pomodoro.html" class="active">Pomodoro Timer</a></li>
+          <li><a href="motivation.html">Motivation</a></li>
+        </ul>
+      </nav>
+
+      <!-- ======================= -->
+      <!-- Pomodoro Timer Section -->
+      <!-- ======================= -->
+      <section class="pomodoro-container">
+        <div class="pomodoro-card">
+          <!-- Header introducing the feature -->
+          <h2>Pomodoro Focus Timer</h2>
+
+          <!-- Input field for user to name their current task -->
+          <div class="task-input">
+            <input
+              type="text"
+              id="taskName"
+              placeholder="What are you focusing on?"
+            />
+          </div>
+
+          <!-- Timer visualization area -->
+          <div class="timer">
+            <!-- SVG circle for progress animation (visually fills up as timer runs) -->
+            <svg class="progress-ring" width="200" height="200">
+              <circle
+                class="progress-ring-circle"
+                stroke="#66B2FF"
+                stroke-width="8"
+                fill="transparent"
+                r="90"
+                cx="100"
+                cy="100"
+              />
+            </svg>
+
+            <!-- Numeric time display for minutes:seconds -->
+            <div class="time-display" id="time">25:00</div>
+          </div>
+
+          <!-- Control buttons for timer functionality -->
+          <div class="timer-controls">
+            <!-- Starts the Pomodoro timer -->
+            <button class="btn primary" id="start">Start</button>
+
+            <!-- Pauses the timer -->
+            <button class="btn secondary" id="pause">Pause</button>
+
+            <!-- Resets timer back to initial value -->
+            <button class="btn secondary" id="reset">Reset</button>
+          </div>
+
+          <!-- Motivational quote displayed beneath timer -->
+          <p class="motivation-line" id="motivationQuote">
+            "The secret of getting ahead is getting started."
+          </p>
+        </div>
+      </section>
+
+      <!-- ======================= -->
+      <!-- JavaScript Script Link -->
+      <!-- ======================= -->
+      <!-- Links to script.js for handling timer logic and animations -->
+      <script src="script.js"></script>
+    </body>
+</html>

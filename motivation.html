@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Defines the character encoding for proper text display -->
+    <meta charset="UTF-8" />
+    <!-- Makes the website responsive across different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importing the Roboto Slab font for consistent and modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title that appears in the browser tab -->
+    <title>FocusFlow | Motivation</title>
+
+    <!-- Linking the external CSS stylesheet for design and layout -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ======================= -->
+    <!-- Navigation Bar Section -->
+    <!-- ======================= -->
+    <nav class="navbar">
+      <!-- Site logo that links back to the homepage -->
+      <a href="index.html" class="logo">
+        <h1 class="main">FocusFlow</h1>
+      </a>
+
+      <!-- Navigation links to different sections of the FocusFlow web app -->
+      <ul class="nav-links">
+        <li><a href="taskManager.html">Task Manager</a></li>
+        <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+        <!-- The current page (Motivation) is marked active for visual feedback -->
+        <li><a href="motivation.html" class="active">Motivation</a></li>
+      </ul>
+    </nav>
+
+    <!-- ======================= -->
+    <!-- Motivation Page Content -->
+    <!-- ======================= -->
+    <section class="motivation-container">
+      
+      <!-- ======================= -->
+      <!-- Static Motivation Quote Card -->
+      <!-- ======================= -->
+      <div class="motivation-card">
+        <!-- Section title for quotes -->
+        <h2>Need a Boost?</h2>
+
+        <!-- Display area for motivational quote text -->
+        <p id="motivationText">
+          "Discipline is choosing between what you want now and what you want most."
+        </p>
+
+        <!-- Button to generate a new motivational quote (handled by script.js) -->
+        <button id="newQuote" class="btn primary">New Quote</button>
+      </div>
+
+      <!-- ======================= -->
+      <!-- AI Motivation Feature -->
+      <!-- ======================= -->
+      <div class="motivation-ai">
+        <!-- Small heading introducing AI feature -->
+        <h3>Feeling Unmotivated?</h3>
+
+        <!-- Instructional text for the user -->
+        <p>Describe how you're feeling, and FocusFlow AI will inspire you.</p>
+
+        <!-- Input area for user to describe their mood -->
+        <div class="task-input">
+          <!-- Text input for user's current feeling -->
+          <input id="moodInput" type="text" placeholder="e.g., I'm tired from studying..." />
+
+          <!-- Button that triggers AI-generated motivation based on user's mood -->
+          <button id="aiMotivateBtn">Inspire Me</button>
+        </div>
+
+        <!-- Paragraph where the AI-generated response will appear -->
+        <p id="aiResponse" class="result"></p>
+      </div>
+    </section>
+
+    <!-- ======================= -->
+    <!-- External JavaScript -->
+    <!-- ======================= -->
+    <!-- Links to script.js where quote generation and AI responses are handled -->
+    <script src="script.js"></script>
+  </body>
+</html>

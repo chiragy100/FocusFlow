@@ -1,0 +1,635 @@
+/* Reset + Global */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    color: #E0E6F5;
+    background: linear-gradient(135deg, #0d1b2a, #102a54, #1f3c78);
+    background-attachment: fixed;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(13, 27, 42, 0.65);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  overflow-x: clip; /* prevents any cut-off or horizontal scroll */
+}
+
+/* Logo */
+.logo {
+  text-decoration: none;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.main {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #E0E6F5;
+  transition: all 0.3s ease;
+}
+
+.logo:hover .main {
+  color: #66B2FF;
+  text-shadow: 0 0 20px rgba(102, 178, 255, 0.6);
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-links li {
+  flex-shrink: 0; /* ensures items don't compress */
+}
+
+.nav-links a {
+  color: #E0E6F5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* keeps words together */
+}
+
+.nav-links a:hover {
+  color: #66B2FF;
+}
+
+/* Handle smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem 4%;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 10%;
+    animation: fadeIn 1.3s ease forwards;
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(102, 178, 255, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.6rem;
+    color: #AFCBFF;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    color: #D0D8EB;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+/* Buttons (Upgraded Interaction) */
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary Button */
+.btn.primary {
+  background-color: #66B2FF;
+  color: #0d1b2a;
+  box-shadow: 0 0 12px rgba(102, 178, 255, 0.4);
+}
+
+.btn.primary:hover {
+  background-color: #8dc5ff;
+  box-shadow: 0 0 20px rgba(102, 178, 255, 0.6);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Secondary Button */
+.btn.secondary {
+  border: 2px solid #66B2FF;
+  color: #66B2FF;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(102, 178, 255, 0.25);
+}
+
+.btn.secondary:hover {
+  background-color: rgba(102, 178, 255, 0.12);
+  box-shadow: 0 0 18px rgba(102, 178, 255, 0.5);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Click Feedback (Pressed State) */
+.btn:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 0 6px rgba(102, 178, 255, 0.3);
+  transition: all 0.1s ease;
+}
+
+/* Optional glowing pulse on hover */
+.btn.primary:hover::after,
+.btn.secondary:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+  animation: pulseGlow 1.6s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 5rem 8% 6rem;
+  background: rgba(13, 27, 42, 0.5);
+}
+
+/* Each Note (Equal Size, Proper Alignment) */
+.note {
+  width: 280px;
+  height: 230px; /* consistent height */
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #E0E6F5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* content starts at top */
+  align-items: flex-start;
+  overflow: hidden; /* clean edges */
+}
+
+.note h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #66B2FF;
+  line-height: 1.3;
+}
+
+.note p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #D0D8EB;
+  margin: 0; /* remove default paragraph spacing */
+  text-align: left;
+  flex-grow: 1; /* fill remaining space evenly */
+  display: flex;
+  align-items: flex-start; /* align top of paragraph */
+}
+
+/* Hover Effect */
+.note:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 8px 30px rgba(102, 178, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.motivationAbout {
+  width: 280px;
+  height: 230px; /* consistent height */
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #E0E6F5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* content starts at top */
+  align-items: flex-start;
+  overflow: hidden; /* clean edges */
+}
+
+/* Pomodoro Page */
+.pomodoro-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.pomodoro-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(102, 178, 255, 0.25);
+  width: 320px;
+  color: #E0E6F5;
+  animation: fadeIn 1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.pomodoro-card:hover {
+  transform: translateY(-5px);
+}
+
+.pomodoro-card h2 {
+  font-size: 1.5rem;
+  color: #66B2FF;
+  margin-bottom: 0.5rem;
+}
+
+/* Task Input */
+.task-input input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #E0E6F5;
+  transition: all 0.3s ease;
+}
+
+.task-input input:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(102, 178, 255, 0.3);
+}
+
+/* Timer UI */
+.timer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 1rem 0;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  opacity: 0.9;
+}
+
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E0E6F5;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Motivation Line */
+.motivation-line {
+  font-size: 0.95rem;
+  color: #AFCBFF;
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Active Nav Highlight */
+.nav-links a.active {
+  color: #66B2FF;
+  text-shadow: 0 0 10px rgba(102, 178, 255, 0.5);
+}
+
+/* Task Manager */
+.task-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6rem;
+  min-height: 100vh;
+}
+
+.task-manager {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  width: 85%;
+  max-width: 900px;
+  color: #E0E6F5;
+  box-shadow: 0 0 25px rgba(102, 178, 255, 0.3);
+  animation: fadeIn 1s ease;
+}
+
+.task-manager h2 {
+  color: #66B2FF;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #AFCBFF;
+  margin-bottom: 2rem;
+}
+
+/* Add Task Form */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.task-form input {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E0E6F5;
+  font-size: 1rem;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.task-form input:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(102, 178, 255, 0.3);
+}
+
+/* Sort Dropdown */
+.sort-options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #AFCBFF;
+}
+
+.sort-options select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #000000;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  outline: none;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Task Card */
+.task-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Task Info */
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.task-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #E0E6F5;
+}
+
+.task-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #AFCBFF;
+}
+
+/* Task Buttons */
+.task-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.task-actions button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.task-actions .complete-btn {
+  background-color: #66B2FF;
+  color: #0d1b2a;
+}
+
+.task-actions .delete-btn {
+  background: transparent;
+  border: 2px solid #66B2FF;
+  color: #66B2FF;
+}
+
+.task-actions button:hover {
+  transform: scale(1.05);
+}
+
+.task-card.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Active Nav Highlight */
+.nav-links a.active {
+  color: #66B2FF;
+  text-shadow: 0 0 10px rgba(102, 178, 255, 0.5);
+}
+
+
+/* === MOTIVATION PAGE === */
+.motivation-container {
+  min-height: 100vh;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.motivation-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  max-width: 600px;
+  box-shadow: 0 0 25px rgba(102, 178, 255, 0.3);
+}
+
+.motivation-card h2 {
+  color: #66B2FF;
+  margin-bottom: 1rem;
+}
+
+.motivation-card p {
+  font-size: 1.1rem;
+  color: #D0D8EB;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* AI Section */
+.motivation-ai {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 1.8rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(102, 178, 255, 0.25);
+  width: 90%;
+  max-width: 600px;
+}
+
+.motivation-ai h3 {
+  color: #66B2FF;
+  margin-bottom: 0.5rem;
+}
+
+.motivation-ai p {
+  color: #AFCBFF;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+.motivation-ai .task-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.motivation-ai input {
+  flex: 1;
+  min-width: 250px;
+}
+
+.motivation-ai button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #66B2FF;
+  color: #0d1b2a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.motivation-ai button:hover {
+  transform: translateY(-2px);
+  background-color: #8dc5ff;
+}
+
+.result {
+  margin-top: 1rem;
+  color: #E0E6F5;
+  font-style: italic;
+  font-size: 1rem;
+}
