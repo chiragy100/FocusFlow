@@ -22,39 +22,25 @@
 
   <body>
     <!-- ======================= -->
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (single, cleaned) -->
     <!-- ======================= -->
     <nav class="navbar">
-        <!-- Logo linking to homepage -->
-        <a href="index.html" class="logo">
-            <h1 class="main">FocusFlow</h1>
-        </a>
+      <!-- Logo for site branding, returns to homepage -->
+      <a href="index.html" class="logo">
+        <h1 class="main">FocusFlow</h1>
+      </a>
 
-        <!-- Navigation links to other FocusFlow pages -->
-        <ul class="nav-links">
-            <li><a href="taskManager.html">Task Manager</a></li>
-            <li><a href="pomodoro.html">Pomodoro Timer</a></li>
-            <li><a href="motivation.html">Motivation</a></li>
-        </ul>
+      <!-- Active link visually indicates the user is on the Pomodoro Timer page -->
+      <ul class="nav-links">
+        <li><a href="taskManager.html">Task Manager</a></li>
+        <li><a href="pomodoro.html" class="active">Pomodoro Timer</a></li>
+        <li><a href="motivation.html">Motivation</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div id="focusScoreDisplay" class="score-badge" aria-live="polite">Focus Score: 0</div>
+      </div>
     </nav>
-
-    <!-- ======================= -->
-    <!-- SECOND NAVBAR (main one used for this page) -->
-    <!-- ======================= -->
-    <body>
-      <nav class="navbar">
-        <!-- Logo for site branding, returns to homepage -->
-        <a href="index.html" class="logo">
-          <h1 class="main">FocusFlow</h1>
-        </a>
-
-        <!-- Active link visually indicates the user is on the Pomodoro Timer page -->
-        <ul class="nav-links">
-          <li><a href="taskManager.html">Task Manager</a></li>
-          <li><a href="pomodoro.html" class="active">Pomodoro Timer</a></li>
-          <li><a href="motivation.html">Motivation</a></li>
-        </ul>
-      </nav>
 
       <!-- ======================= -->
       <!-- Pomodoro Timer Section -->
@@ -116,5 +102,4 @@
       <!-- ======================= -->
       <!-- Links to script.js for handling timer logic and animations -->
       <script src="script.js"></script>
-    </body>
-</html>
+    </html>

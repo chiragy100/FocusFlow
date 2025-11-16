@@ -32,6 +32,17 @@ html, body {
   flex-shrink: 0; /* prevent shrinking */
 }
 
+.logo {
+  margin-right: 2rem;
+}
+
+.nav-actions {
+  margin-left: auto; /* push to right */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .main {
   font-size: 1.8rem;
   font-weight: 700;
@@ -48,7 +59,7 @@ html, body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   flex-wrap: nowrap;
@@ -632,4 +643,44 @@ html, body {
   color: #E0E6F5;
   font-style: italic;
   font-size: 1rem;
+}
+
+/* Focus Score badge - integrates with the app theme */
+.score-badge {
+  background: linear-gradient(135deg, rgba(102,178,255,0.12), rgba(102,178,255,0.06));
+  color: #E0E6F5;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px; /* pill */
+  border: 1px solid rgba(102, 178, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(16, 42, 84, 0.35);
+  z-index: 101;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* pulse animation used when score increments */
+.score-pulse {
+  animation: scorePulse 700ms ease;
+}
+
+@keyframes scorePulse {
+  0% { transform: scale(1); box-shadow: 0 6px 18px rgba(16, 42, 84, 0.6); }
+  50% { transform: scale(1.12); box-shadow: 0 10px 26px rgba(102,178,255,0.25); }
+  100% { transform: scale(1); box-shadow: 0 6px 18px rgba(16, 42, 84, 0.35); }
+}
+
+/* Small responsive adjustment: move to centered top on narrow screens */
+@media (max-width: 768px) {
+  .score-badge {
+    position: fixed; /* place at top center on small screens */
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 68px;
+    z-index: 9999;
+  }
 }

@@ -36,13 +36,17 @@
         <!-- The current page (Motivation) is marked active for visual feedback -->
         <li><a href="motivation.html" class="active">Motivation</a></li>
       </ul>
+      <div class="nav-actions">
+        <div id="focusScoreDisplay" class="score-badge" aria-live="polite">
+          Focus Score: 0
+        </div>
+      </div>
     </nav>
 
     <!-- ======================= -->
     <!-- Motivation Page Content -->
     <!-- ======================= -->
     <section class="motivation-container">
-      
       <!-- ======================= -->
       <!-- Static Motivation Quote Card -->
       <!-- ======================= -->
@@ -52,7 +56,8 @@
 
         <!-- Display area for motivational quote text -->
         <p id="motivationText">
-          "Discipline is choosing between what you want now and what you want most."
+          "Discipline is choosing between what you want now and what you want
+          most."
         </p>
 
         <!-- Button to generate a new motivational quote (handled by script.js) -->
@@ -72,7 +77,11 @@
         <!-- Input area for user to describe their mood -->
         <div class="task-input">
           <!-- Text input for user's current feeling -->
-          <input id="moodInput" type="text" placeholder="e.g., I'm tired from studying..." />
+          <input
+            id="moodInput"
+            type="text"
+            placeholder="e.g., I'm tired from studying..."
+          />
 
           <!-- Button that triggers AI-generated motivation based on user's mood -->
           <button id="aiMotivateBtn">Inspire Me</button>
